@@ -1,4 +1,3 @@
-# dashboard.py
 import streamlit as st
 import pandas as pd
 import seaborn as sns
@@ -45,6 +44,3 @@ with tab3:
     HeatMap(high_fare_sample.values, radius=6).add_to(m)
 
     st_folium(m, width=700, height=500)
-
-
-df.to_parquet("cleaned_taxi_data.parquet", index=False)
