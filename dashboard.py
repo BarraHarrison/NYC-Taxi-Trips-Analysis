@@ -14,6 +14,16 @@ def load_data():
     return pd.read_parquet("cleaned_taxi_data.parquet")
 
 df = load_data()
+
+df['payment_label'] = df['payment_type'].map({
+    1: "Credit Card",
+    2: "Cash",
+    3: "No Charge",
+    4: "Dispute",
+    5: "Unknown",
+    6: "Voided Trip"
+})
+
 st.markdown("Dataset loaded with **{} rows**.".format(len(df)))
 
 st.sidebar.header("Filters")
