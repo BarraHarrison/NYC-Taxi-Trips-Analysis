@@ -53,4 +53,4 @@ with tab3:
     m = folium.Map(location=[40.75, -73.97], zoom_start=11)
     HeatMap(high_fare_sample.values, radius=6).add_to(m)
 
-    st_folium(m, width=700, height=500)
+    st_folium(m, height=500, use_container_width=True)
